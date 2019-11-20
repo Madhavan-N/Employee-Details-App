@@ -1,0 +1,16 @@
+<h2>Employee List</h2>
+<ul class="heroes">
+  <li *ngFor="let employee of employees" (click)="onSelect(employee.employeeGuid)">
+    <span class="badge">{{employee.employeeId}}</span> {{employee.name}}
+  </li>
+</ul>
+
+<div *ngIf="selectedEmployee">
+  <button (click)="clearEmployeeDetails()" >Clear</button>
+  <h2>{{selectedEmployee.name | uppercase}} Details</h2>
+  <div><span>Employee Id: </span>{{selectedEmployee.employeeId}}</div>
+  <div><span>Name: </span>{{selectedEmployee.name}}</div>
+  <div><span>Email: </span>{{selectedEmployee.email}}</div>
+  <div><span>Mobile Number: </span>{{selectedEmployee.mobileNumber}}</div>
+  <div><span>Address: </span>{{selectedEmployee.address}}</div>
+</div>
